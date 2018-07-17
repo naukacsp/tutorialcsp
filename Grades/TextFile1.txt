@@ -1,0 +1,28 @@
+﻿        private int numberOfHairOnAdasHead = 0;
+        private int numberOfHairOnAdasHead2;
+
+        private string a = "";
+        private string b;
+        private string c = string.Empty;
+
+            string a = "a" + "b" + "c";
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("d");
+            sb.ToString();
+
+            Console.WriteLine("my name is {0}", "s");
+
+            string s = new StringBuilder()
+                .Append("d")
+                .Append("")
+                .AppendLine("")
+                .Append(string.Empty)
+                .AppendFormat("my name is {0}", sb.ToString())
+                .AppendLine()
+
+                .ToString();
+
+            
+
+            //Environment.NewLine       //NEW LINE = "\n\r\"        //"\n"
