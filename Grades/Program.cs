@@ -18,11 +18,7 @@ namespace Grades
             GradeBook book = new GradeBook();
             /* to invoke both methods */
             book.NameChanged = new NameChangedDelegate(OnNameChanged);
-            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
-            book.NameChanged += OnNameChanged2;
-            book.NameChanged += OnNameChanged2;
-            book.NameChanged -= new NameChangedDelegate(OnNameChanged2);
-
+            book.NameChanged += OnNameChanged;
             // overwrite code above: book.NameChanged = new NameChangedDelegate(OnNameChanged2);
             book.Name = "Scott's Grade Book";
             book.Name = "Grade Book";
@@ -48,14 +44,9 @@ namespace Grades
             */
         }
 
-        private static void OnNameChanged2(string existingName, string newName)
+        private static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine("***");
-        }
-
-        private static void OnNameChanged(string existingName, string newName)
-        {
-            Console.WriteLine($"Grade book changing name from {existingName} to {newName}");
+            Console.WriteLine($"Grade book changing name from {args.ExistingName} to {args.NewName}");
         }
 
         private static void WriteResult(string description, float result)
